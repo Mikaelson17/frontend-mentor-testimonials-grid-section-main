@@ -12,3 +12,139 @@
     --Light-gray: hsl(0, 0%, 81%);
     --Light-grayish-blue: hsl(210, 46%, 95%);
 }
+
+/* Global rules */ 
+* {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    box-sizing: border-box;
+}
+
+img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 1px solid white;
+    width: 56px;
+    height: 56px;
+    margin-right: 20px ;
+    
+}
+
+
+
+/* Section Styel */
+
+section {
+    background-color: var(--Light-grayish-blue);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 350px));
+    grid-gap: 25px;
+    margin: 30px;
+    padding: 25px;
+    border-radius: 5px;
+    width: fit-content;
+    grid-template-areas:'daniel daniel jon kira'
+                        'jean patrick patrick kira ';
+}
+
+
+section > div {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    padding: 20px 35px 10px;
+}
+
+section > div .profile {
+    display: flex;
+    align-items: center;
+}
+
+section > div .profile h1 {
+    font-size: 22px;
+    font-weight: 400;
+    position: relative;
+}
+
+section > div .profile h1::after {
+    content: "\"Verified Graduate\"";
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 50%;
+    
+}
+
+section > div h2 {
+
+    font-weight: 500;
+}
+
+section > div p {
+    opacity: 70% ;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.daniel, .jon, .patrick {
+
+    color: var(--White);
+
+}
+
+.daniel {
+    background-color: var(--Moderate-violet);
+    grid-area: daniel;
+}
+
+.jon {
+    background-color: var(--Very-dark-grayish-blue) ;
+    grid-area: jon;
+}
+
+.patrick {
+    background-color: var(--Very-dark-blackish-blue);
+    grid-area: patrick;
+}
+
+.jean, .kira {
+    background-color:var(--White) ;
+    color: var(--Very-dark-grayish-blue);
+}
+
+.jean {
+    grid-area: jean;
+}
+
+.kira {
+
+    grid-area: kira;
+}
+
+footer {
+
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Mobile Version */
+
+@media (max-width: 767px) {
+
+    section {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "daniel"
+        "jon"
+        "jean"
+        "patrick"
+        "kira";
+}
+}
+
+
